@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -14,7 +13,8 @@ import {
   Car, 
   Settings, 
   DollarSign, 
-  CheckCircle
+  CheckCircle,
+  X
 } from 'lucide-react';
 import { carMakes } from '@/data/cars';
 import { toast } from "@/hooks/use-toast";
@@ -210,7 +210,7 @@ const SellCar: React.FC = () => {
       navigate('/');
     }, 2000);
   };
-  
+
   const renderProgressBar = () => {
     const steps = [
       { number: 1, title: 'Basic Info' },

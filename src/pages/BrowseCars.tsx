@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -221,7 +220,7 @@ const BrowseCars: React.FC = () => {
                     <SelectValue placeholder="All Makes" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">All Makes</SelectItem>
+                    <SelectItem value="all-makes">All Makes</SelectItem>
                     {carMakes.map((make) => (
                       <SelectItem key={make} value={make}>{make}</SelectItem>
                     ))}
