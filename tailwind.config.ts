@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,12 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Custom colors for car app
+				navy: '#1A2C42',
+				orange: '#F67B30',
+				lightGray: '#F5F7FA',
+				charcoal: '#333333',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
