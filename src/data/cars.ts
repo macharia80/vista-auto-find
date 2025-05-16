@@ -60,7 +60,7 @@ export const featuredCars: Car[] = [
     mileage: 12000,
     fuelType: 'Electric',
     transmission: 'Automatic',
-    imageUrl: 'https://i.pinimg.com/736x/06/ea/f9/06eaf96b1f7222df7b0eae1072d9c630.jpg',
+    imageUrl: 'https://i.pinimg.com/736x/2a/7a/6b/2a7a6b80010057270b280d07eac76d8a.jpg',
     description: 'Tesla Model 3 with Autopilot. Amazing range and performance with latest software updates installed.'
   },
   {
@@ -108,7 +108,7 @@ export const featuredCars: Car[] = [
     mileage: 14000,
     fuelType: 'Hybrid',
     transmission: 'Automatic',
-    imageUrl: 'https://i.pinimg.com/736x/b5/62/7d/b5627d12826c442c83349330ad8ce696.jpg',
+    imageUrl: 'https://i.pinimg.com/736x/e1/c4/9f/e1c49f1aacc947efb5bca8e8b65aaf94.jpg',
     description: 'Modern Hyundai Tucson with hybrid efficiency. Features include large touchscreen, advanced safety features, and comfortable interior.'
   },
   {
