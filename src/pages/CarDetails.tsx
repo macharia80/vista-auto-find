@@ -14,18 +14,23 @@ import {
   Fuel, 
   Settings, 
   ArrowLeftCircle, 
-  ArrowRightCircle 
+  ArrowRightCircle,
+  User
 } from 'lucide-react';
 import { allCars } from '@/data/cars';
 import { useCart } from '@/context/CartContext';
 import { formatCurrency } from '@/lib/utils';
 import CarCard from '@/components/CarCard';
 import { Alert, AlertDescription } from '@/components/ui/alert';
+import ContactSellerModal from '@/components/ContactSellerModal';
+import SellerProfileModal from '@/components/SellerProfileModal';
 
 const CarDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const { addToCart } = useCart();
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [contactModalOpen, setContactModalOpen] = useState(false);
+  const [profileModalOpen, setProfileModalOpen] = useState(false);
   
   // Find the car with matching id
   const car = allCars.find(car => car.id === id);
@@ -48,6 +53,10 @@ const CarDetails: React.FC = () => {
     'https://images.unsplash.com/photo-1543465077-db45d34b88a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
     'https://images.unsplash.com/photo-1586263074429-55cc2a411bcf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
   ] : [];
+
+  // Seller info - would come from API in real app
+  const sellerName = "John Doe";
+  const sellerSince = "2020";
   
   if (!car) {
     return (
@@ -72,6 +81,14 @@ const CarDetails: React.FC = () => {
   
   const prevImage = () => {
     setActiveImageIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  const handleContactSeller = () => {
+    setContactModalOpen(true);
+  };
+  
+  const handleViewProfile = () => {
+    setProfileModalOpen(true);
   };
   
   return (
@@ -354,7 +371,11 @@ const CarDetails: React.FC = () => {
                   Add to Cart
                 </Button>
                 
-                <Button variant="outline" className="w-full">
+                <Button 
+                  variant="outline" 
+                  className="w-full"
+                  onClick={handleContactSeller}
+                >
                   Contact Seller
                 </Button>
               </div>
@@ -368,11 +389,16 @@ const CarDetails: React.FC = () => {
                     <span className="font-medium text-gray-600">JD</span>
                   </div>
                   <div>
-                    <p className="font-medium">John Doe</p>
-                    <p className="text-sm text-gray-500">Member since 2020</p>
+                    <p className="font-medium">{sellerName}</p>
+                    <p className="text-sm text-gray-500">Member since {sellerSince}</p>
                   </div>
                 </div>
-                <Button variant="outline" className="w-full text-sm">
+                <Button 
+                  variant="outline" 
+                  className="w-full text-sm"
+                  onClick={handleViewProfile}
+                >
+                  <User className="mr-2 h-4 w-4" />
                   View Seller Profile
                 </Button>
               </div>
@@ -390,6 +416,24 @@ const CarDetails: React.FC = () => {
           ))}
         </div>
       </section>
+
+      {/* Modals */}
+      <ContactSellerModal 
+        open={contactModalOpen}
+        onOpenChange={setContactModalOpen}
+        sellerName={sellerName}
+        carTitle={`${car.year} ${car.make} ${car.model}`}
+      />
+
+      <SellerProfileModal
+        open={profileModalOpen}
+        onOpenChange={setProfileModalOpen}
+        sellerName={sellerName}
+        onContactClick={() => {
+          setProfileModalOpen(false);
+          setTimeout(() => setContactModalOpen(true), 100);
+        }}
+      />
     </div>
   );
 };

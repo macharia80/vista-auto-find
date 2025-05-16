@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -7,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { FileText, Clock, Search, ChevronRight } from 'lucide-react';
+import NewsletterSubscription from '@/components/NewsletterSubscription';
 
 const Blog: React.FC = () => {
   // Example blog posts data
@@ -183,15 +183,7 @@ const Blog: React.FC = () => {
               <p className="mb-6 text-gray-300">
                 Get the latest automotive news, reviews, and buying guides delivered straight to your inbox.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Input 
-                  placeholder="Enter your email" 
-                  className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
-                />
-                <Button className="bg-orange hover:bg-orange/90 text-white whitespace-nowrap">
-                  Subscribe
-                </Button>
-              </div>
+              <NewsletterSubscription />
             </div>
           </div>
         </div>
