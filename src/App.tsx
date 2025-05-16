@@ -17,6 +17,11 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Layout from "./components/Layout";
 import { CartProvider } from "./context/CartContext";
+import PricingGuide from "./pages/PricingGuide";
+import CarValuation from "./pages/CarValuation";
+import Blog from "./pages/Blog";
+import SupportCenter from "./pages/SupportCenter";
+import HowItWorks from "./pages/HowItWorks";
 
 const queryClient = new QueryClient();
 
@@ -37,8 +42,13 @@ const App = () => (
                 <Route path="cart" element={<Cart />} />
                 <Route path="wishlist" element={<WishList />} />
                 <Route path="about" element={<About />} />
+                <Route path="how-it-works" element={<HowItWorks />} />
                 <Route path="login" element={<Login />} />
                 <Route path="register" element={<Register />} />
+                <Route path="pricing-guide" element={<PricingGuide />} />
+                <Route path="car-valuation" element={<CarValuation />} />
+                <Route path="blog" element={<Blog />} />
+                <Route path="support" element={<SupportCenter />} />
                 <Route path="*" element={<NotFound />} />
               </Route>
             </Routes>
