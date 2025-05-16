@@ -1,73 +1,102 @@
-# Welcome to your Lovable project
+# 🚗 CarSell — Ultimate Car Selling & Buying App
 
-## Project info
+> A modern mobile application designed to make buying and selling cars fast, secure, and user-friendly.
 
-**URL**: https://lovable.dev/projects/a528a163-a9a8-4da6-a710-2efefeea0da4
+![App Preview](screenshots/app-preview.png)
 
-## How can I edit this code?
+## 📝 Overview
 
-There are several ways of editing your application.
+CarSell is a cross-platform mobile application that connects car buyers and sellers in real-time. Whether you're an individual looking to sell your used car or a dealership managing multiple listings, CarSell provides all the tools needed to list, discover, and transact vehicles seamlessly.
 
-**Use Lovable**
+Built with performance and trust in mind, CarSell includes powerful features like vehicle valuation, messaging, test drive scheduling, payment integrations, and more.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/a528a163-a9a8-4da6-a710-2efefeea0da4) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## ✨ Features
 
-**Use your preferred IDE**
+### For Sellers:
+- Create detailed car listings (make, model, year, mileage, images, etc.)
+- Auto-detect car details using VIN or license plate
+- Pricing suggestions based on market data
+- Manage messages and test drive requests
+- Analytics dashboard for listing performance
+- Verified seller badges
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### For Buyers:
+- Browse thousands of listings
+- Advanced filters (price, location, make, mileage, etc.)
+- Save searches and receive alerts
+- Chat directly with sellers
+- Schedule test drives
+- View vehicle history reports
+- Instant financing options
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### General Features:
+- In-app messaging and notifications
+- Location-based search
+- Secure payment and escrow system
+- Document assistance (title transfer, bill of sale)
+- Ratings and reviews
+- Dark mode support
+- Multi-language support
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 🔧 Technology Stack
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+| Layer       | Technology Used              |
+|-------------|------------------------------|
+| Frontend    | React Native / Flutter       |
+| Backend     | Node.js / Firebase           |
+| Database    | PostgreSQL / MongoDB         |
+| Authentication | Firebase Auth / OAuth     |
+| Cloud Storage | AWS S3 / Firebase Storage  |
+| Maps        | Google Maps API              |
+| Payments    | Stripe / PayPal              |
 
-# Step 3: Install the necessary dependencies.
-npm i
+---
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## 🧩 MVP Feature List
 
-**Edit a file directly in GitHub**
+To launch a Minimum Viable Product (MVP), we recommend starting with these core features:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+1. User registration/login (email, phone, social)
+2. Car listing creation (with images and basic info)
+3. Car browsing with filters
+4. Messaging between buyer and seller
+5. Push notifications
+6. Test drive scheduling
+7. Vehicle history report lookup
+8. Basic analytics for sellers
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📦 Installation (for Developers)
 
-## What technologies are used for this project?
+### Prerequisites
+- Node.js installed
+- Yarn or npm
+- Android Studio / Xcode (if building natively)
+- Firebase account (or backend service)
 
-This project is built with:
+### Steps
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```bash
+# Clone the repo
+git clone https://github.com/yourusername/carsell.git 
 
-## How can I deploy this project?
+# Navigate into the project directory
+cd carsell
 
-Simply open [Lovable](https://lovable.dev/projects/a528a163-a9a8-4da6-a710-2efefeea0da4) and click on Share -> Publish.
+# Install dependencies
+npm install
+# or
+yarn install
 
-## Can I connect a custom domain to my Lovable project?
+# Configure environment variables
+cp .env.example .env
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+# Run the app
+npx react-native run-android
+# or
+npx react-native run-ios
